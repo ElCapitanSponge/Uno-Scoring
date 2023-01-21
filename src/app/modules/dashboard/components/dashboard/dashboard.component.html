@@ -1,1 +1,109 @@
-<p>dashboard works!</p>
+<div class="grid">
+    <div class="col-12 lg:col-6 xl:col-4">
+        <!-- Users -->
+        <p-panel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-users"></i>&nbsp;Avaliable Players
+            </ng-template>
+            <div *ngIf="users.length === 0" class="w-full text-center font-bold">
+                No Active Players Found
+            </div>
+            <div *ngIf="users.length > 0" class="w-full">
+                <p-table [value]="users">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-person>
+                        <tr>
+                            <td>{{person.name}}</td>
+                            <td class="flex justify-content-end">
+                                <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-raised p-button-rounded p-button-info" (click)="helper.goTo('/people/' + person.id)"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <ng-template pTemplate="footer">
+                <div class="flex justify-content-around">
+                    <button pButton pRipple type="button" label="New Player" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-success" (click)="helper.goTo('/people/create')"></button>
+                </div>
+            </ng-template>
+        </p-panel>
+    </div>
+    <div class="col-12 lg:col-6 xl:col-4">
+        <!-- Games -->
+        <p-panel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-server"></i>&nbsp;Avaliable Games
+            </ng-template>
+            <div *ngIf="games.length === 0" class="w-full text-center font-bold">
+                No Active Games Found
+            </div>
+            <div *ngIf="games.length > 0" class="w-full">
+                <p-table [value]="games">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Max Points</th>
+                            <th>No. Players</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-game>
+                        <tr>
+                            <td>{{game.name}}</td>
+                            <td>{{game.max_points}}</td>
+                            <td>{{game.players.length}}</td>
+                            <td class="flex justify-content-end">
+                                <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-raised p-button-rounded p-button-info" (click)="helper.goTo('/games/' + game.id)"></button>
+                                <button pButton pRipple type="button" icon="pi pi-play" class="p-button-raised p-button-rounded p-button-success" (click)="helper.goTo('/games/' + game.id + '/play')"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <ng-template pTemplate="footer">
+                <div class="flex justify-content-around">
+                    <button pButton pRipple type="button" label="New Game" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-success" (click)="helper.goTo('/games/create')"></button>
+                </div>
+            </ng-template>
+        </p-panel>
+    </div>
+    <div class="col-12 xl:col-4">
+        <!-- Uno Types -->
+        <p-panel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-book"></i>&nbsp;Avaliable UNO Games
+            </ng-template>
+            <div *ngIf="uno_games.length === 0" class="w-full text-center font-bold">
+                No UNO Games Found
+            </div>
+            <div *ngIf="uno_games.length > 0" class="w-full">
+                <p-table [value]="uno_games">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-uno>
+                        <tr>
+                            <td>{{uno.name}}</td>
+                            <td class="flex justify-content-end">
+                                <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-raised p-button-rounded p-button-info" (click)="helper.goTo('/settings/' + uno.id)"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <ng-template pTemplate="footer">
+                <div class="flex justify-content-around">
+                    <button pButton pRipple type="button" label="New UNO Game" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-success" (click)="helper.goTo('/settings/create')"></button>
+                </div>
+            </ng-template>
+        </p-panel>
+    </div>
+</div>
