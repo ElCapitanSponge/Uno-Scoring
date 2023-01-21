@@ -1,10 +1,9 @@
-import { Card } from "../interfaces/card"
+import { Card, Card_for_type } from "../interfaces/card"
 import { UnoTypes } from "../interfaces/uno-types"
 import { Storage } from "./storage"
 import { StorageTypes } from "./storage-types"
 
 export class DefaultUnoGames {
-
 
     constructor(private storage: Storage) {
         this.storage_people_init()
@@ -58,10 +57,17 @@ export class DefaultUnoGames {
     }
 
     private game_original_uno(): UnoTypes {
+        let card_list: Card[] = this.cards_original_uno()
+        let cards: Card_for_type[] = []
+        card_list.forEach((card: Card) => {
+            cards.push({
+                id: card.id
+            })
+        })
         let game: UnoTypes = {
             id: 1,
             name: "Uno - Original",
-            cards: this.cards_original_uno()
+            cards
         }
 
         return game
@@ -151,10 +157,17 @@ export class DefaultUnoGames {
     }
 
     private game_disney_uno(): UnoTypes {
+        let card_list: Card[] = this.cards_disney_uno()
+        let cards: Card_for_type[] = []
+        card_list.forEach((card: Card) => {
+            cards.push({
+                id: card.id
+            })
+        })
         let game: UnoTypes = {
             id: 2,
             name: "Uno Disney",
-            cards: this.cards_disney_uno()
+            cards
         }
 
         return game
@@ -254,10 +267,17 @@ export class DefaultUnoGames {
     }
 
     private game_flip_uno(): UnoTypes {
+        let card_list: Card[] = this.cards_flip_uno()
+        let cards: Card_for_type[] = []
+        card_list.forEach((card: Card) => {
+            cards.push({
+                id: card.id
+            })
+        })
         let game: UnoTypes = {
             id: 3,
             name: "Uno Flip!",
-            cards: this.cards_flip_uno()
+            cards
         }
 
         return game
