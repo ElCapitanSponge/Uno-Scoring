@@ -1,4 +1,5 @@
 import { Person, Person_Game } from "./person"
+import { UnoTypes } from "./uno-types"
 
 export interface Game {
     id: number
@@ -10,4 +11,5 @@ export interface Game {
     winner_is_lowest: boolean
     round: number
     players_list?: Person[]
+    game_config?: UnoTypes
 }

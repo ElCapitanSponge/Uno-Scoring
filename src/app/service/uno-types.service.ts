@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { Card, Card_for_type } from '../interfaces/card'
 import { UnoTypes } from '../interfaces/uno-types'
 import { Storage } from '../utilities/storage'
 import { StorageTypes } from '../utilities/storage-types'
@@ -24,6 +25,7 @@ export class UnoTypesService {
     if (this.types.length === 0)
       this.storage.createItem(StorageTypes.uno_types, this.types)
     type.id = this.types.length + 1
+    type.card_list = undefined
     this.storage.updateItem(StorageTypes.uno_types, this.types.concat(type))
   }
 
@@ -31,11 +33,24 @@ export class UnoTypesService {
     this.types.forEach(t => {
       if (t.id === type.id)
         t = type
+      t.card_list = undefined
     })
     this.storage.updateItem(StorageTypes.uno_types, this.types)
   }
 
   public removeType(type: UnoTypes) {
     this.storage.updateItem(StorageTypes.uno_types, this.types.filter(t => t.id !== type.id))
+  }
+
+  public getCards(cards: Card_for_type[]): Card[] {
+    let result: Card[] | null = this.storage.getItem(StorageTypes.cards)
+    if (result === null)
+      return []
+    let card_list: Card[] = []
+    result.forEach((cl: Card) => {
+      if (cards.find((c: Card_for_type) => c.id === cl.id))
+        card_list.push(cl)
+    })
+    return card_list
   }
 }
