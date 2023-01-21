@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core'
 import { Person } from '../interfaces/person'
 import { Storage } from '../utilities/storage'
+import { StorageTypes } from '../utilities/storage-types'
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,7 @@ export class PeopleService {
   }
 
   private loadPeople(): Person[] {
-    let result: Person[] | null = this.storage.getItem('people')
+    let result: Person[] | null = this.storage.getItem(StorageTypes.people)
     if (result === null)
       return []
     return result
@@ -20,9 +21,9 @@ export class PeopleService {
 
   public addPerson(person: Person) {
     if (this.people.length === 0)
-      this.storage.createItem('people', this.people)
+      this.storage.createItem(StorageTypes.people, this.people)
     person.id = this.people.length + 1
-    this.storage.updateItem('people', this.people.concat(person))
+    this.storage.updateItem(StorageTypes.people, this.people.concat(person))
   }
 
   public updatePerson(person: Person) {
@@ -30,10 +31,10 @@ export class PeopleService {
       if (p.id === person.id)
         p = person
     })
-    this.storage.updateItem('people', this.people)
+    this.storage.updateItem(StorageTypes.people, this.people)
   }
 
   public removePerson(person: Person) {
-    this.storage.updateItem('people', this.people.filter(p => p.id !== person.id))
+    this.storage.updateItem(StorageTypes.people, this.people.filter(p => p.id !== person.id))
   }
 }

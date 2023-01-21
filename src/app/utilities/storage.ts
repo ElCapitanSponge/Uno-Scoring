@@ -16,4 +16,8 @@ export class Storage {
     public createItem(key: string, value: any) {
         localStorage.setItem(key, JSON.stringify(value))
     }
+
+    public existsItem(key: string): boolean {
+        return localStorage.getItem(key) !== null
+    }
 }
