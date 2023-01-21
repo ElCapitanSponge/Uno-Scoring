@@ -10,6 +10,7 @@ import { PanelModule } from 'primeng/panel';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { InputTextModule } from 'primeng/inputtext';
     ButtonModule,
     TableModule,
     RippleModule,
-    InputTextModule
+    InputTextModule,
+    FormsModule
   ]
 })
 export class PeopleModule { }

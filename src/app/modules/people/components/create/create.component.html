@@ -1,1 +1,23 @@
-<p>create works!</p>
+<div class="grid">
+    <div class="col-12 md:col-4 xl:col-3">
+        <button pButton pRipple type="button" label="Back" icon="pi pi-chevron-circle-left" iconPos="left" class="p-button-raised p-button-warning" (click)="goBack()"></button>
+    </div>
+    <div class="col-12 md:col-8 xl:col-9">
+        Create New Player
+    </div>
+    <div class="col-12">
+        <p-panel>
+            <ng-template pTemplate="header">
+                Players Details
+            </ng-template>
+            <div>Username</div>
+            <input id="player-name" type="text" pInputText [(ngModel)]="person.name">
+            <ng-template pTemplate="footer">
+                <div class="flex justify-content-around">
+                    <button pButton pRipple type="button" icon="pi pi-undo" class="p-button-raised p-button-rounded p-button-warning" (click)="clear()"></button>
+                    <button pButton pRipple type="button" icon="pi pi-save" class="p-button-raised p-button-rounded p-button-success" (click)="save()"></button>
+                </div>
+            </ng-template>
+        </p-panel>
+    </div>
+</div>

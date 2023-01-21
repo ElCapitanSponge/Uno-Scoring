@@ -25,6 +25,7 @@ export class CardsService {
       this.storage.createItem(StorageTypes.cards, this.cards)
     card.id = this.cards.length + 1
     this.storage.updateItem(StorageTypes.cards, this.cards.concat(card))
+    this.cards = this.loadCards()
   }
 
   public updateCard(card: Card) {
@@ -33,9 +34,11 @@ export class CardsService {
         c = card
     })
     this.storage.updateItem(StorageTypes.cards, this.cards)
+    this.cards = this.loadCards()
   }
 
   public removeCard(card: Card) {
     this.storage.updateItem(StorageTypes.cards, this.cards.filter(c => c.id !== card.id))
+    this.cards = this.loadCards()
   }
 }

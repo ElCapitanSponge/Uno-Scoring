@@ -27,6 +27,7 @@ export class UnoTypesService {
     type.id = this.types.length + 1
     type.card_list = undefined
     this.storage.updateItem(StorageTypes.uno_types, this.types.concat(type))
+    this.types = this.loadTypes()
   }
 
   public updateType(type: UnoTypes) {
@@ -36,10 +37,12 @@ export class UnoTypesService {
       t.card_list = undefined
     })
     this.storage.updateItem(StorageTypes.uno_types, this.types)
+    this.types = this.loadTypes()
   }
 
   public removeType(type: UnoTypes) {
     this.storage.updateItem(StorageTypes.uno_types, this.types.filter(t => t.id !== type.id))
+    this.types = this.loadTypes()
   }
 
   public getCards(cards: Card_for_type[]): Card[] {
