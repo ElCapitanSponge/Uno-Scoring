@@ -6,6 +6,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PanelModule } from 'primeng/panel'
 import { ButtonModule } from 'primeng/button'
 import { TableModule } from 'primeng/table'
+import { RippleModule } from 'primeng/ripple';
 @NgModule({
   declarations: [
     DashboardComponent
@@ -15,7 +16,8 @@ import { TableModule } from 'primeng/table'
     DashboardRoutingModule,
     PanelModule,
     ButtonModule,
-    TableModule
+    TableModule,
+    RippleModule
   ]
 })
 export class DashboardModule { }

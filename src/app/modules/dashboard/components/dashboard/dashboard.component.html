@@ -20,7 +20,7 @@
                         <tr>
                             <td>{{person.name}}</td>
                             <td class="flex justify-content-end">
-                                <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-raised p-button-rounded p-button-info" (click)="helper.goTo('/people/' + person.id)"></button>
+                                <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-raised p-button-rounded p-button-info" (click)="helper.goTo('/players/' + person.id)"></button>
                             </td>
                         </tr>
                     </ng-template>
@@ -28,7 +28,7 @@
             </div>
             <ng-template pTemplate="footer">
                 <div class="flex justify-content-around">
-                    <button pButton pRipple type="button" label="New Player" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-success" (click)="helper.goTo('/people/create')"></button>
+                    <button pButton pRipple type="button" label="New Player" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-success" (click)="helper.goTo('/players/create')"></button>
                 </div>
             </ng-template>
         </p-panel>

@@ -75,9 +75,9 @@ export class AppComponent implements OnInit {
     })
     // INFO: People
     menu.push({
-      label: 'People',
+      label: 'Players',
       icon: 'pi pi-users',
-      command: () => this.helper.goTo('/people')
+      command: () => this.helper.goTo('/players')
     })
     // INFO: Settings
     menu.push({

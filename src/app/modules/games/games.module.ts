@@ -6,6 +6,11 @@ import { CreateComponent } from './components/create/create.component';
 import { PlayComponent } from './components/play/play.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
+import { ButtonModule } from 'primeng/button';
+import { PanelModule } from 'primeng/panel';
+import { RippleModule } from 'primeng/ripple';
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
 
 
 @NgModule({
@@ -17,7 +22,12 @@ import { ListComponent } from './components/list/list.component';
   ],
   imports: [
     CommonModule,
-    GamesRoutingModule
+    GamesRoutingModule,
+    PanelModule,
+    ButtonModule,
+    TableModule,
+    RippleModule,
+    InputTextModule
   ]
 })
 export class GamesModule { }
