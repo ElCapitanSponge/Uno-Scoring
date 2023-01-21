@@ -1,5 +1,9 @@
 export interface Person {
     id: number
     name: string
-    points?: number
+}
+
+export interface Person_Game {
+    id: number
+    points: number
 }

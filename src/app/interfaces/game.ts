@@ -1,11 +1,13 @@
-import { Person } from "./person"
+import { Person_Game } from "./person"
 import { UnoTypes } from "./uno-types"
 
 export interface Game {
     id: number
     name: string
     max_points: number
-    type: UnoTypes
+    game_type: number
     creation_date: Date
-    players: Person[]
+    players: Person_Game[]
+    winner_is_lowest: boolean
+    rounds: number
 }
