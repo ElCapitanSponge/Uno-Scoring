@@ -61,17 +61,7 @@ export class AppComponent implements OnInit {
     menu.push({
       label: 'Games',
       icon: 'pi pi-server',
-      items: [
-        {
-          label: 'List',
-          icon: 'pi pi-list',
-          command: () => this.helper.goTo('/games')
-        }, {
-          label: 'Create',
-          icon: 'pi pi-plus',
-          command: () => this.helper.goTo('/games/create')
-        }
-      ]
+      command: () => this.helper.goTo('/games')
     })
     // INFO: People
     menu.push({
