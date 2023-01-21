@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { Card } from '../interfaces/card';
-import { Storage } from '../utilities/storage';
+import { Injectable } from '@angular/core'
+import { Card } from '../interfaces/card'
+import { Storage } from '../utilities/storage'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardsService {
-  public cards: Card[] = []
+  public cards: Card[]
 
   constructor(private storage: Storage) {
     this.cards = this.loadCards()

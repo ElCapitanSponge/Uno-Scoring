@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
-import { UnoTypes } from '../interfaces/uno-types';
-import { Storage } from '../utilities/storage';
+import { Injectable } from '@angular/core'
+import { UnoTypes } from '../interfaces/uno-types'
+import { Storage } from '../utilities/storage'
 
 @Injectable({
   providedIn: 'root'
 })
 export class UnoTypesService {
-  public types: UnoTypes[] = []
+  public types: UnoTypes[]
 
   constructor(private storage: Storage) {
     this.types = this.loadTypes()

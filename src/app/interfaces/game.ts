@@ -2,7 +2,7 @@ import { Person } from "./person"
 import { UnoTypes } from "./uno-types"
 
 export interface Game {
-    id: string
+    id: number
     name: string
     max_points: number
     type: UnoTypes
