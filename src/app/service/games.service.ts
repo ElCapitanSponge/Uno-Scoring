@@ -29,6 +29,7 @@ export class GamesService {
     game.players_list = undefined
     game.game_config = undefined
     this.storage.updateItem(StorageTypes.games, this.games.concat(game))
+    this.games = this.loadGames()
   }
 
   public updateGame(game: Game) {
@@ -39,10 +40,12 @@ export class GamesService {
       g.game_config = undefined
     })
     this.storage.updateItem(StorageTypes.games, this.games)
+    this.games = this.loadGames()
   }
 
   public removeGame(game: Game) {
     this.storage.updateItem(StorageTypes.games, this.games.filter(g => g.id !== game.id))
+    this.games = this.loadGames()
   }
 
   public getPlayers(players: Person_Game[]): Person[] {

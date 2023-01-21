@@ -1,1 +1,40 @@
-<p>list works!</p>
+<div class="grid">
+    <div class="col-12">
+        <div class="flex justify-content-around">
+            <button pButton pRipple type="button" label="New Game" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-success" (click)="helper.goTo('/games/create')"></button>
+        </div>
+    </div>
+    <div class="col-12">
+        <p-panel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-server"></i>&nbsp;Avaliable Games
+            </ng-template>
+            <div *ngIf="games.length === 0" class="w-full text-center font-bold">
+                No Active Games Found
+            </div>
+            <div *ngIf="games.length > 0" class="w-full">
+                <p-table [value]="games">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Max Points</th>
+                            <th>No. Players</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-game>
+                        <tr>
+                            <td>{{game.name}}</td>
+                            <td>{{game.max_points}}</td>
+                            <td>{{game.players.length}}</td>
+                            <td class="flex justify-content-end">
+                                <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-raised p-button-rounded p-button-info" (click)="helper.goTo('/games/' + game.id)"></button>
+                                <button pButton pRipple type="button" icon="pi pi-play" class="p-button-raised p-button-rounded p-button-success" (click)="helper.goTo('/games/' + game.id + '/play')"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </p-panel>
+    </div>
+</div>

@@ -1,15 +1,15 @@
+import { Injectable } from "@angular/core"
 import { Card, Card_for_type } from "../interfaces/card"
 import { UnoTypes } from "../interfaces/uno-types"
 import { Storage } from "./storage"
 import { StorageTypes } from "./storage-types"
 
+@Injectable({
+    providedIn: 'root'
+})
 export class DefaultUnoGames {
 
     constructor(private storage: Storage) {
-        this.storage_people_init()
-        this.storage_games_init()
-        this.storage_types_init()
-        this.storage_cards_init()
     }
 
     private storage_cards_empty(): boolean {
@@ -384,5 +384,12 @@ export class DefaultUnoGames {
         ]
 
         return cards
+    }
+
+    public defaults_run(): void {
+        this.storage_people_init()
+        this.storage_games_init()
+        this.storage_types_init()
+        this.storage_cards_init()
     }
 }

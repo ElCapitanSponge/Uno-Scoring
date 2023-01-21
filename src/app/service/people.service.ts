@@ -24,6 +24,7 @@ export class PeopleService {
       this.storage.createItem(StorageTypes.people, this.people)
     person.id = this.people.length + 1
     this.storage.updateItem(StorageTypes.people, this.people.concat(person))
+    this.people = this.loadPeople()
   }
 
   public updatePerson(person: Person) {
@@ -32,9 +33,11 @@ export class PeopleService {
         p = person
     })
     this.storage.updateItem(StorageTypes.people, this.people)
+    this.people = this.loadPeople()
   }
 
   public removePerson(person: Person) {
     this.storage.updateItem(StorageTypes.people, this.people.filter(p => p.id !== person.id))
+    this.people = this.loadPeople()
   }
 }

@@ -1,1 +1,35 @@
-<p>list works!</p>
+<div class="grid">
+    <div class="col-12">
+        <div class="flex justify-content-around">
+            <button pButton pRipple type="button" label="New UNO Game" icon="pi pi-plus" iconPos="left" class="p-button-raised p-button-success" (click)="helper.goTo('/settings/create')"></button>
+        </div>
+    </div>
+    <div class="col-12">
+        <p-panel>
+            <ng-template pTemplate="header">
+                <i class="pi pi-book"></i>&nbsp;Avaliable UNO Games
+            </ng-template>
+            <div *ngIf="uno_games.length === 0" class="w-full text-center font-bold">
+                No UNO Games Found
+            </div>
+            <div *ngIf="uno_games.length > 0" class="w-full">
+                <p-table [value]="uno_games">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-uno>
+                        <tr>
+                            <td>{{uno.name}}</td>
+                            <td class="flex justify-content-end">
+                                <button pButton pRipple type="button" icon="pi pi-eye" class="p-button-raised p-button-rounded p-button-info" (click)="helper.goTo('/settings/' + uno.id)"></button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </p-panel>
+    </div>
+</div>
