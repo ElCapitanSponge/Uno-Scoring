@@ -39,7 +39,7 @@ export class ViewComponent implements OnInit {
     }
   }
 
-  private playerGet() {
+  private playerGet(): void {
     let tmp: Person | undefined = this.peopleService.getPerson(this.player_id)
     if (typeof tmp === 'undefined') {
       this.messageService.add({ severity: MessageTypes.warning, summary: 'WARNING', detail: 'Unable to locate the desired player' })

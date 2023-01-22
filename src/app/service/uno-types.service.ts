@@ -56,4 +56,16 @@ export class UnoTypesService {
     })
     return card_list
   }
+
+  public getType(id: number): UnoTypes | undefined {
+    let type: UnoTypes | undefined
+    let result: UnoTypes[] = this.types.filter((t: UnoTypes) => t.id === id)
+    if (result.length === 1)
+      type = result[0]
+    return type
+  }
+
+  public refreshTypes(): void {
+    this.types = this.loadTypes()
+  }
 }
