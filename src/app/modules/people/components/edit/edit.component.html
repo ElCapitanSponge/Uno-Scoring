@@ -6,18 +6,19 @@
         Editing Player: {{ getOriginalName() }}
     </div>
     <div class="col-12" *ngIf="player !== undefined">
-        <p-panel>
-            <ng-template pTemplate="header">
-                Players Details
-            </ng-template>
-            <div>Username</div>
-            <input id="player-name" type="text" pInputText [(ngModel)]="player.name">
-            <ng-template pTemplate="footer">
+        <div class="grid">
+            <div class="col-12">
+                <p-fieldset legend="Details">
+                    <div class="font-bold">Username</div>
+                    <input id="player-name" type="text" pInputText [(ngModel)]="player.name">
+                </p-fieldset>
+            </div>
+            <div class="col-12">
                 <div class="flex justify-content-around">
                     <button pButton pRipple type="button" icon="pi pi-undo" class="p-button-raised p-button-rounded p-button-warning" (click)="reset()"></button>
                     <button pButton pRipple type="button" icon="pi pi-save" class="p-button-raised p-button-rounded p-button-success" (click)="update()"></button>
                 </div>
-            </ng-template>
-        </p-panel>
+            </div>
+        </div>
     </div>
 </div>

@@ -6,17 +6,18 @@
         Player: {{ player.name }}
     </div>
     <div class="col-12" *ngIf="player !== undefined">
-        <p-panel>
-            <ng-template pTemplate="header">
-                Players Details
-            </ng-template>
-            <div>Username</div>
-            <div>{{ player.name }}</div>
-            <ng-template pTemplate="footer">
+        <div class="grid">
+            <div class="col-12">
+                <p-fieldset legend="Details">
+                    <div class="font-bold">Username</div>
+                    <div>{{ player.name }}</div>
+                </p-fieldset>
+            </div>
+            <div class="col-12">
                 <div class="flex justify-content-around">
                     <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-raised p-button-rounded p-button-warning" (click)="edit()"></button>
                 </div>
-            </ng-template>
-        </p-panel>
+            </div>
+        </div>
     </div>
 </div>
