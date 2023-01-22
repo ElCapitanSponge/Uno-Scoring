@@ -2,8 +2,8 @@
     <div class="col-12 md:col-4 xl:col-3">
         <button pButton pRipple type="button" label="Back" icon="pi pi-chevron-circle-left" iconPos="left" class="p-button-raised p-button-warning" (click)="goBack()"></button>
     </div>
-    <div class="col-12 md:col-8 xl:col-9" *ngIf="player !== undefined">
-        Editing Player {{ getOriginalName() }}
+    <div class="col-12 md:col-8 xl:col-9 text-4xl" *ngIf="player !== undefined">
+        Editing Player: {{ getOriginalName() }}
     </div>
     <div class="col-12" *ngIf="player !== undefined">
         <p-panel>

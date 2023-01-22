@@ -60,21 +60,21 @@ export class EditComponent implements OnInit {
   public update(): void {
     if (typeof this.player === 'undefined' || typeof this.player_original === 'undefined') {
       this.messageService.add({ severity: MessageTypes.error, summary: 'ERROR', detail: 'Failed player validation' })
-      this.helper.goTo('/players')
+      this.goBack()
     }
     if (this.player!.name === this.player_original!.name) {
       this.messageService.add({ severity: MessageTypes.info, summary: 'INFO', detail: 'Player details have not changed' })
-      this.helper.goTo('/players')
+      this.goBack()
     } else {
       let people: Person[] | undefined = this.peopleService.getPeopleName(this.player_original!.name)
       if (typeof people === 'undefined') {
         this.messageService.add({ severity: MessageTypes.error, summary: 'ERROR', detail: 'Unable to determine player to update' })
-        this.helper.goTo('/players')
+        this.goBack()
       }
       people = this.peopleService.getPeopleName(this.player!.name)
       if (typeof people !== 'undefined') {
         this.messageService.add({ severity: MessageTypes.error, summary: 'ERROR', detail: 'Player already exists with the desired name' })
-        this.reset()
+        this.goBack()
       } else {
         this.peopleService.updatePerson(this.player!)
         this.peopleService.refreshPeople()
@@ -99,7 +99,7 @@ export class EditComponent implements OnInit {
   }
 
   public goBack(): void {
-    this.helper.goTo('/players')
+    this.helper.goTo('/players/' + this.player_id)
   }
 
   public getOriginalName(): string {
