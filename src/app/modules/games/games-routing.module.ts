@@ -4,6 +4,7 @@ import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ListComponent } from './components/list/list.component';
 import { PlayComponent } from './components/play/play.component';
+import { ViewComponent } from './components/view/view.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
         children: [
           {
             path: '',
+            pathMatch: 'full',
+            component: ViewComponent
+          }, {
+            path: 'edit',
             pathMatch: 'full',
             component: EditComponent
           }, {

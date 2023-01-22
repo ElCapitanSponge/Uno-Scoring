@@ -1,0 +1,41 @@
+<div class="grid">
+    <div class="col-12 md:col-4 xl:col-3">
+        <button pButton pRipple type="button" label="Back" icon="pi pi-chevron-circle-left" iconPos="left" class="p-button-raised p-button-warning" (click)="goBack()"></button>
+    </div>
+    <div class="col-12 md:col-8 xl:col-9 text-4xl" *ngIf="uno_game !== undefined">
+        Game: {{ uno_game.name }}
+    </div>
+    <div class="col-12" *ngIf="uno_game !== undefined">
+        <div class="grid">
+            <div class="col-12">
+                <p-fieldset legend="Details">
+                    <div class="font-bold">Name</div>
+                    <div>{{ uno_game.name }}</div>
+                </p-fieldset>
+            </div>
+            <div class="col-12">
+                <p-fieldset legend="Cards List">
+                    <p-table [value]="uno_game.card_list!">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>Name</th>
+                                <th>Score Value</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-card>
+                            <tr>
+                                <td>{{card.name}}</td>
+                                <td>{{card.value}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </p-fieldset>
+            </div>
+            <div class="col-12">
+                <div class="flex justify-content-around">
+                    <button pButton pRipple type="button" icon="pi pi-pencil" class="p-button-raised p-button-rounded p-button-warning" (click)="edit()"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
