@@ -16,6 +16,7 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.peopleService.refreshPeople()
     this.people = this.peopleService.people
   }
 }

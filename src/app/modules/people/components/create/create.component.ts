@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { PrimeNGConfig, MessageService } from 'primeng/api';
-import { Person } from 'src/app/interfaces/person';
-import { PeopleService } from 'src/app/service/people.service';
-import { Helper } from 'src/app/utilities/helper';
+import { Person } from '../../../../interfaces/person';
+import { PeopleService } from '../../../../service/people.service';
+import { Helper } from '../../../../utilities/helper';
+import { MessageTypes } from '../../../../utilities/message-types';
 
 @Component({
   selector: 'app-create',
@@ -31,20 +32,20 @@ export class CreateComponent {
   }
 
   public save(): void {
-    let people: Person[] = this.peopleService.people
+    let people: Person[] | undefined = this.peopleService.getPeopleName(this.person.name)
     let error: boolean = false
-    if (people.filter((p: Person) => p.name === this.person.name).length > 0) {
-      this.messageService.add({ severity: 'error', summary: 'ERROR', detail: 'Player already exists with the desired name' })
+    if (typeof people !== 'undefined') {
+      this.messageService.add({ severity: MessageTypes.error, summary: 'ERROR', detail: 'Player already exists with the desired name' })
       error = true
     }
     if (!error) {
       this.peopleService.addPerson(this.person)
-      people = this.peopleService.people
-      if (people.filter((p: Person) => p.name === this.person.name).length !== 1)
-        this.messageService.add({ severity: 'error', summary: 'ERROR', detail: 'Failed to create new player' })
+      people = this.peopleService.getPeopleName(this.person.name)
+      if (typeof people === 'undefined' || (typeof people !== 'undefined' && people.length !== 1))
+        this.messageService.add({ severity: MessageTypes.error, summary: 'ERROR', detail: 'Failed to create new player' })
       else {
-        this.messageService.add({ severity: 'success', summary: 'SUCCESS', detail: 'New player created' })
-        this.person = people.filter((p: Person) => p.name === this.person.name)[0]
+        this.messageService.add({ severity: MessageTypes.success, summary: 'SUCCESS', detail: 'New player created' })
+        this.person = people[0]
         this.helper.goTo('/players/' + this.person.id)
       }
     }
