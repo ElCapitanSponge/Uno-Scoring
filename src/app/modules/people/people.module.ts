@@ -11,13 +11,15 @@ import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
+import { ViewComponent } from './components/view/view.component';
 
 
 @NgModule({
   declarations: [
     ListComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,

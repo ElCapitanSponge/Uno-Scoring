@@ -11,6 +11,7 @@ import { PanelModule } from 'primeng/panel';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
+import { ViewComponent } from './components/view/view.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { InputTextModule } from 'primeng/inputtext';
     CreateComponent,
     PlayComponent,
     EditComponent,
-    ListComponent
+    ListComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,

@@ -10,13 +10,15 @@ import { ButtonModule } from 'primeng/button';
 import { PanelModule } from 'primeng/panel';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
+import { ViewComponent } from './components/types/view/view.component';
 
 
 @NgModule({
   declarations: [
     ListComponent,
     CreateComponent,
-    EditComponent
+    EditComponent,
+    ViewComponent
   ],
   imports: [
     CommonModule,
