@@ -53,6 +53,14 @@ export class ViewComponent implements OnInit {
       }
       this.uno_game.card_list = this.getUnoCards()
       this.helper.devLog('getUno', 'uno_game', this.uno_game)
+      this.checkUnoCards()
+    }
+  }
+
+  private checkUnoCards(): void {
+    if (this.uno_game?.cards.length !== this.uno_game?.card_list?.length) {
+      this.messageService.add({ severity: MessageTypes.warning, summary: 'WARNING', detail: 'Unable to retrieve the cards for this uno game' })
+      this.goBack()
     }
   }
 
