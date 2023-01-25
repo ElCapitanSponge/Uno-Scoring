@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      timezone: "Australia/Sydney"
+    assignees:
+      - "ElCapitanSponge"
+    commit-message:
+      prefix: "[dependabot npm] "
+    labels:
+      - "npm"
+      - "dependencies"
+      - "dependabot"
+    reviewers:
+      - "ElCapitanSponge"
+    pull-request-branch-name:
+      separator: "-"
+    versioning-strategy: increase-if-necessary
