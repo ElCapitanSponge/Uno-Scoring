@@ -1,27 +1,80 @@
-# UnoScoring
+<a name="readme-top"></a>
+<div align="center">
+    <!-- CONTRIBUTORS -->
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/graphs/contributors">
+        <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/ElCapitanSponge/Uno-Scoring">
+    </a>
+    <!-- FORKS -->
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/network/members">
+        <img alt="GitHub forks" src="https://img.shields.io/github/forks/ElCapitanSponge/Uno-Scoring">
+    </a>
+    <!-- STARS -->
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/stargazers">
+        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ElCapitanSponge/Uno-Scoring">
+    </a>
+    <!-- ISSUES -->
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/issues">
+        <img alt="GitHub issues" src="https://img.shields.io/github/issues/ElCapitanSponge/Uno-Scoring">
+    </a>
+    <!-- PULL REQUESTS -->
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/pulls">
+        <img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/ElCapitanSponge/Uno-Scoring">
+    </a>
+    <!-- LICENSE -->
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/blob/master/LICENSE">
+        <img alt="GitHub" src="https://img.shields.io/github/license/ElCapitanSponge/Uno-Scoring">
+    </a>
+</div>
+<br />
+<div align="center">
+    <h1 align="center">
+        Uno Scoring
+    </h1>
+    <p align="center">
+        Flexible uno scoring tracker
+    </p>
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/issues/new">Report Bug</a>
+    ·
+    <a href="https://github.com/ElCapitanSponge/Uno-Scoring/issues/new">Request Feature</a>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+<!-- ABOUT THE PROJECT -->
+# About The Project
 
-## Development server
+Born out of the need for a scoring tracker for uno games, that are not just the original game.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Running the Uno Scoring Application
 
-## Code scaffolding
+The application can be run locally, just by launching the `dist\uno-scoring\index.html` file, or by running this application through your desired web server.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Build
+<!-- ROADMAP -->
+# Roadmap
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+See the [open issues](https://github.com/ElCapitanSponge/Uno-Scoring/issues) for a full list of proposed features (and known issues).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Running unit tests
+<!-- CODE_OF_CONDUCT -->
+# Code of Conduct
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+See [`CODE_OF_CONDUCT`](https://github.com/ElCapitanSponge/Uno-Scoring/blob/main/CODE_OF_CONDUCT.md) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Running end-to-end tests
+# Development
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+When developing, the application is built using [`Angular`](https://angular.io), and leverages the standard Angular CLI commands.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Further help
+<!-- CONTRIBUTING -->
+# Contributing
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+See [`CONTRIBUTING`](https://github.com/ElCapitanSponge/Uno-Scoring/blob/main/CONTRIBUTING.md) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+# License
+
+Distributed under the Apache 2.0 License. See [`LICENSE`](https://github.com/ElCapitanSponge/Uno-Scoring/blob/main/LICENSE) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

@@ -9,11 +9,11 @@
             <ng-template pTemplate="header">
                 <i class="pi pi-users"></i>&nbsp;Avaliable Players
             </ng-template>
-            <div *ngIf="people.length === 0" class="w-full text-center font-bold">
+            <div *ngIf="peopleService.people.length === 0" class="w-full text-center font-bold">
                 No Active Players Found
             </div>
-            <div *ngIf="people.length > 0" class="w-full">
-                <p-table [value]="people">
+            <div *ngIf="peopleService.people.length > 0" class="w-full">
+                <p-table [value]="peopleService.people">
                     <ng-template pTemplate="header">
                         <tr>
                             <th>Name</th>
