@@ -11,7 +11,7 @@ import { Person } from '../../../../interfaces/person';
 export class ListComponent implements OnInit {
   public people: Person[] = []
 
-  constructor(private primengConfig: PrimeNGConfig, private messageService: MessageService, private peopleService: PeopleService, public helper: Helper) {
+  constructor(private primengConfig: PrimeNGConfig, private messageService: MessageService, public peopleService: PeopleService, public helper: Helper) {
     this.primengConfig.ripple = true
   }
 
